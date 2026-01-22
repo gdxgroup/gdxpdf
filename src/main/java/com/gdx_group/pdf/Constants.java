@@ -1,6 +1,6 @@
 /*
  * e G e d e x: gdxpdf
- * (c) 2025 GDX Group
+ * (c) 2025-2026 GDX Group
  * https://gdx-group.com/
  */
 package com.gdx_group.pdf;
@@ -10,12 +10,14 @@ package com.gdx_group.pdf;
  */
 public interface Constants {
 
-	public static final String API = "/api/v1";
-	public static final String API_PDF = API + "/pdf";
+	String API = "/api/v1";
+	String API_PDF = API + "/pdf";
 
-	public static final String PORTFOLIO = "/portfolio";
-	
-	public static final String PARAM_FILES = "files";
-	
+	String PORTFOLIO = "/portfolio";
+	String PROTECT = "/protect";
+	String PADESLTV = "/padesltv";
 
+	String PARAM_FILES = "files";
+
+	String TSA_ACCV = "http://tss.accv.es:8318/tsa";
 }

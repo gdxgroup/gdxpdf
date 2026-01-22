@@ -2,6 +2,8 @@ package com.gdx_group.pdf;
 
 import java.net.URI;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
@@ -67,6 +69,24 @@ public class PdfDocuments {
 				URI uri = new URI(url);
 				URL u = uri.toURL();
 				files.put(u.getFile(), u.openStream().readAllBytes());
+
+			} catch (Exception ex) {
+				log.warn(ex.getMessage());
+			}
+		}
+		return files;
+	}
+
+	public static Map<String, byte[]> local() {
+		String path = "/temp/facturas/";
+
+		Map<String, byte[]> files = new HashMap<>();
+		for (int i = 1; i < 6; i++) {
+			String name = "factura" + i + ".pdf";
+
+			try {
+				byte[] data = Files.readAllBytes(Paths.get(path + name));
+				files.put(name, data);
 
 			} catch (Exception ex) {
 				log.warn(ex.getMessage());

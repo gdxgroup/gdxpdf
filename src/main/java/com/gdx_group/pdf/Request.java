@@ -13,5 +13,6 @@ import lombok.ToString;
 @ToString
 public class Request {
 	
+	private String apikey;
 	private Map<String, byte[]> files;
 }
